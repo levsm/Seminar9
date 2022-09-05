@@ -4,27 +4,16 @@
 // A = 2; B = 3 -> 8
 
 
-onsole.WriteLine("Введите число A: ");
-int A = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите число B: ");
-int B = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите число A");
+int numberA = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите число B");
+int numberB = Convert.ToInt32(Console.ReadLine());
 
+int PowAtoB(int a, int b)
+{
+    if ( b == 0) return 1;
+    return PowAtoB(a, b - 1) * a;
 
-
-
-
-
-// Задача 25. 
-//Console.WriteLine("Введите число A: ");
-// int A = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine("Введите число B: ");
-// int B = Convert.ToInt32(Console.ReadLine());
-// int i;
-// int result = 1;
-
-// for (i = 1;  i <= B; i++)
-// {
-//    result = A*result;
-// }
-
-// Console.WriteLine($"Число A в степени B = {result}");
+}
+int sum = PowAtoB(numberA, numberB);
+Console.WriteLine(sum);
